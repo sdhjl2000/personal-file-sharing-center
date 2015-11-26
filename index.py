@@ -95,8 +95,8 @@ class Index:
             p = subprocess.Popen(['elastalert-test-rule',fpath ], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
             (stdoutdata, stderrdata) = p.communicate(input=" --alert")
             return stdoutdata
-        except:
-            return "错误"
+        except Exception as e:
+            return str(e)
 
     def POST(self,filename):
 
