@@ -4,6 +4,7 @@ import os
 import time
 import config
 from urllib import quote
+import subprocess
 
 # load config file
 root = config.root
@@ -85,6 +86,15 @@ class Index:
         except:
             return "success" 
 
+    def EXEC(self,filename):
+        try:
+            filename = filename.encode('utf-8')
+            fpath = os.path.join(root,filename)
+            p = subprocess.Popen(['elastalert-test-rule',fpath ], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+            (stdoutdata, stderrdata) = p.communicate(input="")
+            return stdoutdata
+        except:
+            return "´íÎó"
 
     def POST(self,filename):
 

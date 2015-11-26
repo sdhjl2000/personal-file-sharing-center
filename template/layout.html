@@ -161,7 +161,9 @@ $code:
                         <tr><td><img src="$icon[item['type']]" style="width: 40px"></img><a href="/$item["encode"]">$item["name"]</td>
                             <td>$item["size"]</td>
                             <td>$item["time"]</td>
-                            <td><a title="Delete" name="$item["name"]" onclick="delete_file(this)" href="#"><img src="/static/img/bin.png" ></img></a></td></tr>
+                            <td><a title="删除" name="$item["name"]" onclick="delete_file(this)" href="#"><img src="/static/img/bin.png" ></img></a>
+                            <a title="测试" name="$item["name"]" onclick="exec_file(this)" href="#"><img src="/static/img/exec.png" ></img></a>
+                            </td></tr>
                     </tbody>
                 </table>
             </div>
@@ -183,6 +185,18 @@ $code:
             </p>
             </div>
         </footer>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 		<!--Footer结束-->
         <script type="text/javascript" src="/static/js/filedrag.js"></script>
 	</body>

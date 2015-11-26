@@ -108,7 +108,7 @@ and Modified by Ace(i.orzace.com)
 function delete_file(obj)
 {
     var name = obj.name;
-    if(confirm("Delete " + name + ", are you sure?"))
+    if(confirm("确认删除" + name + "?"))
     {
         $.ajax({
             url: document.location.pathname + name,
@@ -120,4 +120,18 @@ function delete_file(obj)
     }
     else
         return;
+}
+function exec_file(obj)
+{
+    var name = obj.name;
+
+        $.ajax({
+            url: document.location.pathname + name,
+            type: 'EXEC',
+            success: function(data){
+                 $(".modal-body").html( data );
+                 $('#myModal').modal('show');
+            }
+        });
+
 }
