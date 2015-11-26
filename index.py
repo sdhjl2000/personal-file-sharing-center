@@ -93,7 +93,7 @@ class Index:
             filename = filename.encode('utf-8')
             fpath = os.path.join(root,filename)
             p = subprocess.Popen(['elastalert-test-rule',fpath ], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-            (stdoutdata, stderrdata) = p.communicate(input="")
+            (stdoutdata, stderrdata) = p.communicate(input=" --alert")
             return stdoutdata
         except:
             return "错误"
