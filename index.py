@@ -92,6 +92,7 @@ class Index:
         try:
             filename = filename.encode('utf-8')
             fpath = os.path.join(root,filename)
+            print(fpath)
             p = subprocess.Popen(['elastalert-test-rule',fpath ], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
             (stdoutdata, stderrdata) = p.communicate(input=" --alert")
             return stdoutdata
