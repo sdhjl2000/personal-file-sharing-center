@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import web
 import os
 import time
@@ -94,7 +96,7 @@ class Index:
             (stdoutdata, stderrdata) = p.communicate(input="")
             return stdoutdata
         except:
-            return "´íÎó"
+            return "é”™è¯¯"
 
     def POST(self,filename):
 
