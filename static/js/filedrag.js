@@ -129,7 +129,7 @@ function exec_file(obj)
             url: document.location.pathname + name,
             type: 'EXEC',
             success: function(data){
-                 $(".modal-body").html( data );
+                $(".modal-body").html('<div style="white-space: pre-wrap">'+data+'</div>');
                  $('#myModal').modal('show');
             }
         });
